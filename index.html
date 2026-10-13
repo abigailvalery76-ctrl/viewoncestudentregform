@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eef4ff, #dfeeff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 700px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1d4ed8, #2563eb);
+            padding: 16px 20px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .number-tag {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            font-size: 13px;
+            margin-right: 8px;
+            font-weight: 700;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #2563eb;
+        }
+
+        .gender-options {
+            display: flex;
+            gap: 25px;
+            margin-top: 8px;
+        }
+
+        .gender-options label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(180px, 1fr));
+            gap: 12px 20px;
+            margin-top: 8px;
+        }
+
+        .courses-grid label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: normal;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            accent-color: #2563eb;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .register-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .register-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .reset-btn {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        .reset-btn:hover {
+            background: #d1d5db;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Student Registration Form</h2>
+
+        <form>
+            <div class="form-group">
+                <label for="fullName"><span class="number-tag">1</span>Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label><span class="number-tag">2</span>Gender</label>
+                <div class="gender-options">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="department"><span class="number-tag">3</span>Department</label>
+                <select id="department" name="department">
+                    <option value="">Select Department</option>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="information-technology">Information Technology</option>
+                    <option value="software-engineering">Software Engineering</option>
+                    <option value="cyber-security">Cyber Security</option>
+                    <option value="business-admin">Business Administration</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><span class="number-tag">4</span>Courses</label>
+                <div class="courses-grid">
+                    <label><input type="checkbox" name="course" value="Web Development"> Web Development</label>
+                    <label><input type="checkbox" name="course" value="Database systems"> Database Systems</label>
+                    <label><input type="checkbox" name="course" value="Computer networks"> Computer Networks</label>
+                    <label><input type="checkbox" name="course" value="Software engineering"> Software Engineering</label>
+                    <label><input type="checkbox" name="course" value="Information security"> Information Security</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><span class="number-tag">5</span>Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address">
+            </div>
+
+            <div class="form-group">
+                <label for="phone"><span class="number-tag">6</span>Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+
+            <div class="button-row">
+                <button type="submit" class="register-btn">Register</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
